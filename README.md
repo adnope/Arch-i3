@@ -96,8 +96,8 @@ I use LXappearance to quickly set GTK themes:
     ```
     sudo cp -r ~/Arch-i3/GTK-Themes/kora /usr/share/icons
     ```
-- Font: Segoe UI Variable Regular Small 14
 - Mouse cursor: Future-dark
     ```
     sudo cp -r ~/Arch-i3/GTK-Themes/Future-dark-cursors /usr/share/icons  
     ```
+- Font: Segoe UI Variable Regular Small 14
