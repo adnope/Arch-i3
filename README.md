@@ -1,6 +1,6 @@
 # AdNope's i3wm dotfiles
 
-[![screenshot](https://imgur.com/k6W5gmD)](https://imgur.com/k6W5gmD)
+[![screenshot](https://i.imgur.com/k6W5gmD.png)](https://i.imgur.com/k6W5gmD.png)
 
 This configuration of i3 can be done by running Archinstall script with i3 desktop, pipewire and NetworkManager selected
 
