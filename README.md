@@ -1,5 +1,7 @@
 # AdNope's i3wm dotfiles
 
+[![screenshot](https://imgur.com/k6W5gmD)](https://imgur.com/k6W5gmD)
+
 This configuration of i3 can be done by running Archinstall script with i3 desktop, pipewire and NetworkManager selected
 
 ## Change shell to zsh
