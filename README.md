@@ -5,7 +5,7 @@
 This configuration of i3 can be done by running Archinstall script with i3 desktop, pipewire and NetworkManager selected
 
 ## Change shell to zsh
-Since Oh-my-zsh is not being able to store in the repo, this is the commands to quickly install Oh-my-zsh and zsh-syntax-highlighting plugin:
+Since Oh-my-zsh is not able to be stored in the repo, this is the commands to quickly install Oh-my-zsh and zsh-syntax-highlighting plugin:
 ```
 sudo pacman -S zsh
 ```
