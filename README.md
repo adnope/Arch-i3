@@ -1,5 +1,7 @@
 # AdNope's i3wm dotfiles
 
+This configuration of i3 can be done by running Archinstall script with i3 desktop, pipewire and NetworkManager selected
+
 ## Change shell to zsh
 Since Oh-my-zsh is not being able to store in the repo, this is the commands to quickly install Oh-my-zsh and zsh-syntax-highlighting plugin:
 ```
@@ -19,7 +21,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
     ```
     sudo pacman -S ttf-firacode-nerd ttf-jetbrains-mono-nerd
     ```
-- Microsoft Fonts
+- Microsoft Fonts:
+
+    According to Arch Wiki, this is how to get microsoft fonts from an existing Windows C Drive partition:
+    ```
+    sudo mount --mkdir /window_partition /run/media/adnope/Windows
+    sudo mkdir -p /usr/local/share/fonts/WindowsFonts
+    sudo cp /run/media/adnope/Windows/Windows/Fonts/*.ttf /usr/local/share/fonts/WindowsFonts/
+    sudo chmod 644 /usr/local/share/fonts/WindowsFonts/*
+    fc-cache --force
+    ```
 
 ## Installing yay as AUR helper
 ```
