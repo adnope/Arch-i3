@@ -56,7 +56,7 @@ yay -S visual-studio-code-bin brave-bin sublime-text-4
 ### i3wm:
 Necessary packages:
 ```
-sudo pacman -S kwallet kwallet-pam polkit-kde-agent xorg-xrandr brightnessctl playerctl feh bluez flameshot lxappearance xcolor nemo kolourpaint micro
+sudo pacman -S kwallet kwallet-pam polkit-kde-agent xorg-xrandr xorg-xinput brightnessctl playerctl feh bluez flameshot lxappearance xcolor nemo kolourpaint micro
 ```
 
 To unlock KDE wallet automatically on login, make sure these two lines are present in /etc/pam.d/sddm:
