@@ -87,6 +87,23 @@ The spotify module needs python-dbus to work so:
 ```
 sudo pacman -S python-dbus
 ```
+In the backlight module, to allow changing brightness by scroll wheel you have to add the current user to the 'video' group and write a udev rule.
+
+Adding user to 'video' group:
+```
+usermod -aG video $USER
+```
+Create the "/etc/udev/rules.d/backlight.rules" file. For my system using nvidia as the backlight vendor, it contains these lines:
+```
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="nvidia_0", RUN+="/usr/bin/chgrp video /sys/class/backlight/nvidia_0/brightness"
+
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="nvidia_0", RUN+="/usr/bin/chmod g+w /sys/class/backlight/nvidia_0/brightness"
+
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="nvidia_0", RUN+="/usr/bin/chgrp video /sys/class/backlight/nvidia_0/actual_brightness"
+
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="nvidia_0", RUN+="/usr/bin/chmod g+w /sys/class/backlight/nvidia_0/actual_brightness"
+```
+This gives polybar the permission to change the 'brightness' and 'actual_brightness' files. If you don't use an nvidia card or use other backlight vendors, check out [Arch Wiki - Backlight](https://wiki.archlinux.org/title/Backlight#Udev_rule).
 
 ## GTK themes
 I use LXappearance to quickly set GTK themes:
