@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Only used for lenovo laptops which has battery conservation mode
+
 echo "Battery conservation mode control"
 echo "[1] Enable"
 echo "[2] Disable"
