@@ -13,6 +13,9 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -26,7 +29,7 @@ alias zshconfig="micro ~/.zshrc"
 alias ins="sudo pacman -S"
 alias upd="sudo pacman -Syu"
 alias remv="sudo pacman -Rsc"
-alias conservationmode="/home/adnope/cons_mode_control.sh" # Used for Lenovo laptops, feel free to remove if you don't need it
+alias conservationmode="~/MyScripts/cons_mode_control.sh" # Used for Lenovo laptops, feel free to remove if you don't need it
 alias changefkeys="sudo input-remapper-control --command start --device \"SONiX Gaming Keyboard\" --preset Change_F_Keys"
 alias changetospeakers="pactl set-default-source alsa_input.pci-0000_05_00.6.analog-stereo && pactl set-default-sink alsa_output.pci-0000_05_00.6.analog-stereo" # Changing default output and input devices (only for my system)
 alias changetoheadphones="pactl set-default-source alsa_input.usb-UC02_UC02_UC02-00.mono-fallback && pactl set-default-sink alsa_output.usb-UC02_UC02_UC02-00.analog-stereo"
