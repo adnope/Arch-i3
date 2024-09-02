@@ -38,7 +38,10 @@ exec --no-startup-id xrandr --output DP-2 --mode 2560x1600 --rate 165
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id flameshot
 
-exec --no-startup-id i3-msg 'workspace 1; exec brave; workspace 2; exec kitty; workspace 3; exec code'
+exec --no-startup-id ~/MyScripts/touchpad_control.sh
+exec --no-startup-id ~/MyScripts/move_cursor.py
+
+exec --no-startup-id i3-msg 'workspace 2; exec kitty; workspace 3; exec code; workspace 1'
 
 #░██████╗░███████╗███╗░░██╗███████╗██████╗░░█████╗░██╗░░░░░
 #██╔════╝░██╔════╝████╗░██║██╔════╝██╔══██╗██╔══██╗██║░░░░░
