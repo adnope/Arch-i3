@@ -36,8 +36,9 @@ exec --no-startup-id ibus-daemon
 exec --no-startup-id blueman-applet
 exec --no-startup-id xrandr --output DP-2 --mode 2560x1600 --rate 165
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-
 exec --no-startup-id flameshot
+
+exec --no-startup-id i3-msg 'workspace 1; exec brave; workspace 2; exec kitty; workspace 3; exec code'
 
 #░██████╗░███████╗███╗░░██╗███████╗██████╗░░█████╗░██╗░░░░░
 #██╔════╝░██╔════╝████╗░██║██╔════╝██╔══██╗██╔══██╗██║░░░░░
@@ -64,16 +65,16 @@ tiling_drag modifier titlebar
 #██║░░██╗██║░░██║██║░░░░░██║░░██║██╔══██╗░╚═══██╗
 #╚█████╔╝╚█████╔╝███████╗╚█████╔╝██║░░██║██████╔╝
 #░╚════╝░░╚════╝░╚══════╝░╚════╝░╚═╝░░╚═╝╚═════╝░
-# class                 border  backgr. text    indicator child_border
+# class                  border  backgr. text    indicator child_border
 #client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
 #client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #client.background       #ffffff
 
 client.focused           #000000 #285577 #ffffff #6272A4   #6272A4
-client.unfocused         #000000 #285577 #ffffff #70788099   #70788099
+client.unfocused         #000000 #285577 #ffffff #70788099 #70788099
+client.urgent            #2f343a #900000 #ffffff #bf616aB3 #bf616aB3  
 
 #██╗░░██╗███████╗██╗░░░██╗██████╗░██╗███╗░░██╗██████╗░░██████╗
 #██║░██╔╝██╔════╝╚██╗░██╔╝██╔══██╗██║████╗░██║██╔══██╗██╔════╝
