@@ -10,6 +10,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source ~/myenv/bin/activate
 
 eval "$(starship init zsh)"
 

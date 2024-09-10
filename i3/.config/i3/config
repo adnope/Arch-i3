@@ -17,6 +17,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+
 #███████╗██╗░░██╗███████╗░█████╗░██╗░░░██╗████████╗███████╗
 #██╔════╝╚██╗██╔╝██╔════╝██╔══██╗██║░░░██║╚══██╔══╝██╔════╝
 #█████╗░░░╚███╔╝░█████╗░░██║░░╚═╝██║░░░██║░░░██║░░░█████╗░░
@@ -49,15 +50,13 @@ exec --no-startup-id code
 #██║░░╚██╗██╔══╝░░██║╚████║██╔══╝░░██╔══██╗██╔══██║██║░░░░░
 #╚██████╔╝███████╗██║░╚███║███████╗██║░░██║██║░░██║███████╗
 #░╚═════╝░╚══════╝╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝
-gaps inner 8px
-gaps outer 4px
+gaps inner 6px
+gaps outer 3px
 
 for_window [class="^.*"] border pixel 2
 for_window [class="pavucontrol"] floating enable
-for_window [class="(?i)prismlauncher"] floating enable
 for_window [class="[Bb]lueman-manager"] floating enable
 for_window [class="[Ll]xappearance"] floating enable
-for_window [class="[Bb]lueman-manager"] move position 2000 50
 
 font pango:FiraCode Nerd Font 8
 floating_modifier $mod
