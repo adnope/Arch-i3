@@ -41,7 +41,7 @@ pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git
 ## Preparation
 Packages to install:
 ```
-sudo pacman -S picom polybar rofi kitty starship
+sudo pacman -S picom polybar rofi kitty starship fastfetch
 yay -S qimgv-git
 ```
 ibus-bamboo:
