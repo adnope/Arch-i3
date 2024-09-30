@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaper=/home/adnope/Pictures/Wallpapers/ign_unsplash49.png
+wallpaper=/home/adnope/Pictures/Wallpapers/Sinestrea/sines-3.png
 
 # Set wallpaper using feh
 feh --bg-fill "$wallpaper"

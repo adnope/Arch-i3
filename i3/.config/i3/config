@@ -33,15 +33,11 @@ exec --no-startup-id picom
 exec --no-startup-id ~/.config/i3/set_wallpaper.sh
 exec --no-startup-id ibus-daemon
 exec --no-startup-id blueman-applet
-exec --no-startup-id xrandr --output DP-2 --mode 2560x1600 --rate 165
+exec --no-startup-id xrandr --dpi 120 --output DP-2 --mode 2560x1600 --rate 165
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id flameshot
 
 exec --no-startup-id ~/MyScripts/move_cursor.py
-
-exec --no-startup-id brave
-exec --no-startup-id kitty
-exec --no-startup-id code
 
 #░██████╗░███████╗███╗░░██╗███████╗██████╗░░█████╗░██╗░░░░░
 #██╔════╝░██╔════╝████╗░██║██╔════╝██╔══██╗██╔══██╗██║░░░░░
@@ -56,6 +52,7 @@ for_window [class="^.*"] border pixel 2
 for_window [class="pavucontrol"] floating enable
 for_window [class="(?i)prismlauncher"] floating enable
 for_window [class="[Bb]lueman-manager"] floating enable
+for_window [class="guvcview"] floating enable
 for_window [class="[Ll]xappearance"] floating enable
 for_window [class="[Bb]lueman-manager"] move position 2000 50
 
