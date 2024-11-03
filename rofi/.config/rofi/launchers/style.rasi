@@ -20,8 +20,20 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+
+/**
+ * Tokyo Night Palette
+**/
+
+* {
+    background:     #15161EFF;
+    background-alt: #1A1B26FF;
+    foreground:     #C0CAF5FF;
+    selected:       #33467CFF;
+    active:         #414868FF;
+    urgent:         #F7768EFF;
+}
+
 * {
     font:                        "JetBrains Mono Nerd Font 14";
 }
