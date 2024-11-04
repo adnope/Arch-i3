@@ -31,6 +31,7 @@ alias h="history"
 alias ins="sudo pacman -S"
 alias upd="sudo pacman -Syu"
 alias remv="sudo pacman -Rsc"
+alias list="pacman -Qe"
 
 alias conservationmode="~/MyScripts/cons_mode_control.sh" # Used for Lenovo laptops, feel free to remove if you don't need it
 
