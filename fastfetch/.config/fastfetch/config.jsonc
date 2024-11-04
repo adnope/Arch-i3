@@ -2,12 +2,13 @@
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
         "type": "auto",
-        "source": "~/.config/fastfetch/bird-circle.png",
+        "source": "~/.config/fastfetch/arch-circle-2.png",
         "width": 32,
-        "height": 15,
+        "height": 14,
         "padding": {
         	"left": 2,
         	"right": 2,
+            "top": 1
         }
     },
     "display": {
