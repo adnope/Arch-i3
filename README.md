@@ -112,16 +112,16 @@ This gives polybar the permission to change the 'brightness' and 'actual_brightn
 
 ## GTK themes
 I use LXappearance to quickly set GTK themes:
-- General: Dracula (old, now I use Tokyo Night)
+- General: Tokyo Night
     ```
-    mkdir -p ~/.local/share/themes && cp -r ~/Arch-i3/GTK-Themes/Tokyonight-Dark ~/.local/share/themes
+    mkdir -p ~/.local/share/themes && cp -r ~/Arch-i3/assets/gtk-themes/Tokyonight-Dark ~/.local/share/themes
     ```
 - Icons: Kora
     ```
-    mkdir -p ~/.local/share/icons && cp -r ~/Arch-i3/GTK-Themes/kora ~/.local/share/icons
+    mkdir -p ~/.local/share/icons && cp -r ~/Arch-i3/assets/gtk-themes/kora ~/.local/share/icons
     ```
 - Mouse cursor: Future-dark
     ```
-    cp -r ~/Arch-i3/GTK-Themes/Future-dark-cursors ~/.local/share/icons
+    cp -r ~/Arch-i3/assets/gtk-themes/Future-dark-cursors ~/.local/share/icons
     ```
 - Font: Product Sans Regular 12
