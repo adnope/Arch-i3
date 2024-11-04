@@ -14,14 +14,14 @@ calculate_speed() {
     TX_RATE_KB=$(( (TX_BYTES_2 - TX_BYTES_1) / 1024 ))
     
     if [ "$RX_RATE_KB" -ge 1000 ]; then
-        RX_RATE_MB=$(echo "scale=2; $RX_RATE_KB / 1024" | bc)
+        RX_RATE_MB=$(awk "BEGIN { printf \"%.2f\", $RX_RATE_KB / 1024 }")
         RX_RATE="${RX_RATE_MB} MB/s"
     else
         RX_RATE="${RX_RATE_KB} KB/s"
     fi
 
     if [ "$TX_RATE_KB" -ge 1000 ]; then
-        TX_RATE_MB=$(echo "scale=2; $TX_RATE_KB / 1024" | bc)
+        TX_RATE_MB=$(awk "BEGIN { printf \"%.2f\", $TX_RATE_KB / 1024 }")
         TX_RATE="${TX_RATE_MB} MB/s"
     else
         TX_RATE="${TX_RATE_KB} KB/s"
@@ -30,29 +30,31 @@ calculate_speed() {
     echo $ICON "  ${RX_RATE}  ${TX_RATE}"
 }
 
-ETH_STATUS=$(nmcli device status | grep -i 'ethernet' | awk '{print $3}')
-WIFI_STATUS=$(nmcli device status | grep -i 'wifi' | awk 'NR==1 {print $3}')
+# Get network status
+NETWORK_STATUS=$(nmcli device status)
+ETH_STATUS=$(echo "$NETWORK_STATUS" | grep -i 'ethernet' | awk '{print $3}')
+WIFI_STATUS=$(echo "$NETWORK_STATUS" | grep -i 'wifi' | awk 'NR==1 {print $3}')
 
-# You can change the color of the icons and the network speed by replacing the hex values
-ETH_ICON=%{F88c0d0}󰈀%{F#eceff4}
-WIFI_ICON_1=%{F88c0d0}󰤯%{F#eceff4}
-WIFI_ICON_2=%{F88c0d0}󰤟%{F#eceff4}
-WIFI_ICON_3=%{F88c0d0}󰤢%{F#eceff4}
-WIFI_ICON_4=%{F88c0d0}󰤥%{F#eceff4}
-WIFI_ICON_5=%{F88c0d0}󰤨%{F#eceff4}
+# Color and icon configuration
+ICON_COLOR="%{F#7aa2f7}"
+TEXT_COLOR="%{F#a9b1d6}"
 
-if [[ "$ETH_STATUS" == "connected" ]] && [[ "$WIFI_STATUS" == "connected" ]]; then
-    INTERFACE=$(nmcli device status | grep -i 'ethernet' | awk 'NR==1 {print $1}')
+ETH_ICON="$ICON_COLOR"󰈀"$TEXT_COLOR"
+WIFI_ICON_1="$ICON_COLOR"󰤯"$TEXT_COLOR"
+WIFI_ICON_2="$ICON_COLOR"󰤟"$TEXT_COLOR"
+WIFI_ICON_3="$ICON_COLOR"󰤢"$TEXT_COLOR"
+WIFI_ICON_4="$ICON_COLOR"󰤥"$TEXT_COLOR"
+WIFI_ICON_5="$ICON_COLOR"󰤨"$TEXT_COLOR"
+
+# Determine interface and icon
+if [[ "$ETH_STATUS" == "connected" ]]; then
+    INTERFACE=$(echo "$NETWORK_STATUS" | grep -i 'ethernet' | awk 'NR==1 {print $1}')
     ICON=$ETH_ICON
-
-elif [ "$ETH_STATUS" == "connected" ];  then
-    INTERFACE=$(nmcli device status | grep -i 'ethernet' | awk 'NR==1 {print $1}')
-    ICON=$ETH_ICON
-
-elif [ "$WIFI_STATUS" == "connected" ];  then
-    INTERFACE=$(nmcli device status | grep -i 'wifi' | awk 'NR==1 {print $1}')
+elif [[ "$WIFI_STATUS" == "connected" ]]; then
+    INTERFACE=$(echo "$NETWORK_STATUS" | grep -i 'wifi' | awk 'NR==1 {print $1}')
     WIFI_SIGNAL=$(nmcli -f AP device show "$INTERFACE" | awk -F: '/IN-USE/ {in_use = $2} in_use ~ /\*/ && /SIGNAL/ {print $2}')
     
+    # Assign appropriate Wi-Fi icon based on signal strength
     if [ "$WIFI_SIGNAL" -ge 80 ]; then
         ICON=$WIFI_ICON_5
     elif [ "$WIFI_SIGNAL" -ge 60 ]; then
@@ -61,14 +63,14 @@ elif [ "$WIFI_STATUS" == "connected" ];  then
         ICON=$WIFI_ICON_3
     elif [ "$WIFI_SIGNAL" -ge 20 ]; then
         ICON=$WIFI_ICON_2
-    else ICON=$WIFI_ICON_1
-    
+    else
+        ICON=$WIFI_ICON_1
     fi
-
 fi
 
-if [ -z $INTERFACE ]; then
+# Check if INTERFACE is empty before calling calculate_speed
+if [ -n "$INTERFACE" ]; then
+    calculate_speed
+else
     echo ""
 fi
-
-calculate_speed
