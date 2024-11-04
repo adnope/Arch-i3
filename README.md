@@ -4,6 +4,8 @@
 
 My own i3 configurations based on the Tokyo Night palette.
 
+I recommend installing Arch with archinstall and KDE to start as KDE provides a very solid base for customizing and daily driving Arch.
+
 ## Change shell to zsh
 Since Oh-my-zsh is not able to be stored in the repo, this is the commands to quickly install Oh-my-zsh and zsh-syntax-highlighting plugin:
 ```
@@ -25,9 +27,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
     ```
 
 - Product Sans:
-```
-    sudo cp Arch-i3/assets/fonts/product-sans/* /usr/local/share/fonts/ttf/
-```
+    ```
+    sudo cp Arch-i3/assets/fonts/product-sans/* /usr/local/share/fonts/ ttf/  
+    ```
 
 - Microsoft Fonts:
 
@@ -112,14 +114,14 @@ This gives polybar the permission to change the 'brightness' and 'actual_brightn
 I use LXappearance to quickly set GTK themes:
 - General: Dracula (old, now I use Tokyo Night)
     ```
-    sudo cp -r ~/Arch-i3/GTK-Themes/Dracula /usr/share/themes
+    mkdir -p ~/.local/share/themes && cp -r ~/Arch-i3/GTK-Themes/Tokyonight-Dark ~/.local/share/themes
     ```
 - Icons: Kora
     ```
-    sudo cp -r ~/Arch-i3/GTK-Themes/kora /usr/share/icons
+    mkdir -p ~/.local/share/icons && cp -r ~/Arch-i3/GTK-Themes/kora ~/.local/share/icons
     ```
 - Mouse cursor: Future-dark
     ```
-    sudo cp -r ~/Arch-i3/GTK-Themes/Future-dark-cursors /usr/share/icons  
+    cp -r ~/Arch-i3/GTK-Themes/Future-dark-cursors ~/.local/share/icons
     ```
 - Font: Product Sans Regular 12
