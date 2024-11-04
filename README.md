@@ -65,6 +65,13 @@ This repo contains config files for the following applications:
 - starship
 - zsh (.zshrc)
 
+Quick command to install all necessary packages:
+```
+sudo pacman -Syu blueman bluez brightnessctl dunst fastfetch feh ffmpegthumbnailer ffmpegthumbs kolourpaint ksnip network-manager-applet pavucontrol playerctl polybar rofi spotify-launcher starship stow unrar ark vivaldi vivaldi-ffmpeg-codecs xclip zsh libheif libpulse libraw libultrahdr libwmf lxappearance micro ntfs-3g power-profiles-daemon xorg-xinput xorg-xrandr
+
+yay -S ibus-bamboo input-remapper-git qimgv-git rofi-greenclip visual-studio-code-bin picom-git
+```
+
 In addition, I included some of my own scripts here in 'MyScripts', and the GTK themes that I use.
 
 ### i3wm:
