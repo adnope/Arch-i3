@@ -1,8 +1,8 @@
 # AdNope's i3wm dotfiles
 
-![screenshot](https://i.imgur.com/k6W5gmD.png)
+![screenshot](assets/preview.png)
 
-This configuration of i3 can be done by running Archinstall script with i3 desktop, pipewire and NetworkManager selected
+My own i3 configurations based on the Tokyo Night palette.
 
 ## Change shell to zsh
 Since Oh-my-zsh is not able to be stored in the repo, this is the commands to quickly install Oh-my-zsh and zsh-syntax-highlighting plugin:
@@ -19,10 +19,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 
 ## Fonts that I use:
-- Nerd Fonts:
+- Jetbrains Nerd Fonts:
     ```
-    sudo pacman -S ttf-firacode-nerd ttf-jetbrains-mono-nerd
+    sudo pacman -S ttf-jetbrains-mono-nerd
     ```
+
+- Product Sans:
+```
+    sudo cp Arch-i3/assets/fonts/product-sans/* /usr/local/share/fonts/ttf/
+```
+
 - Microsoft Fonts:
 
     According to Arch Wiki, this is how to get microsoft fonts from an existing Windows C Drive partition:
@@ -38,34 +44,35 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
-## Preparation
-Packages to install:
-```
-sudo pacman -S picom polybar rofi kitty starship fastfetch
-yay -S qimgv-git
-```
-ibus-bamboo:
-```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo/master/archlinux/install.sh)"
-```
-Browser and IDEs:
-```
-yay -S visual-studio-code-bin brave-bin sublime-text-4
-```
 
-## Notes for each package:
+## Packages and notes:
+
+This repo contains config files for the following applications:
+- dunst
+- fastfetch
+- greenclip
+- i3
+- ibus-bamboo (for vietnamese input)
+- input-remapper
+- kitty
+- mangohud
+- micro
+- picom
+- polybar
+- rofi
+- starship
+- zsh (.zshrc)
+
+In addition, I included some of my own scripts here in 'MyScripts', and the GTK themes that I use.
 
 ### i3wm:
-Necessary packages:
-```
-sudo pacman -S kwallet kwallet-pam polkit-kde-agent xorg-xrandr xorg-xinput brightnessctl playerctl feh bluez flameshot lxappearance xcolor nemo kolourpaint micro
-```
-
+This is some steps to configure KWallet because Brave requires it, but now I don't use Brave anymore.
 To unlock KDE wallet automatically on login, make sure these two lines are present in /etc/pam.d/sddm:
 ```
 auth            optional        pam_kwallet5.so
 session         optional        pam_kwallet5.so auto_start
 ```
+
 Kde authentication agent:
 ```
 sudo pacman -S polkit-kde-agent
@@ -83,10 +90,6 @@ sudo systemctl enable bluetooth
 ```
 
 ### Polybar:
-The spotify module needs python-dbus to work so:
-```
-sudo pacman -S python-dbus
-```
 In the backlight module, to allow changing brightness by scroll wheel you have to add the current user to the 'video' group and write a udev rule.
 
 Adding user to 'video' group:
@@ -107,7 +110,7 @@ This gives polybar the permission to change the 'brightness' and 'actual_brightn
 
 ## GTK themes
 I use LXappearance to quickly set GTK themes:
-- General: Dracula
+- General: Dracula (old, now I use Tokyo Night)
     ```
     sudo cp -r ~/Arch-i3/GTK-Themes/Dracula /usr/share/themes
     ```
@@ -119,4 +122,4 @@ I use LXappearance to quickly set GTK themes:
     ```
     sudo cp -r ~/Arch-i3/GTK-Themes/Future-dark-cursors /usr/share/icons  
     ```
-- Font: Segoe UI Variable Regular Small 14
+- Font: Product Sans Regular 12
