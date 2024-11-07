@@ -27,7 +27,9 @@ calculate_speed() {
         TX_RATE="${TX_RATE_KB} KB/s"
     fi
 
-    echo $ICON "  ${RX_RATE}  ${TX_RATE}"
+    # echo $ICON "  ${RX_RATE}  ${TX_RATE}"
+    # echo $ICON " ${RX_RATE}"
+    echo $ICON " ${RX_RATE}" # Without upload rate
 }
 
 # Get network status
