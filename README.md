@@ -67,7 +67,7 @@ This repo contains config files for the following applications:
 
 Quick command to install all necessary packages:
 ```
-sudo pacman -Syu blueman bluez brightnessctl dunst fastfetch feh ffmpegthumbnailer ffmpegthumbs kolourpaint ksnip network-manager-applet pavucontrol playerctl polybar rofi spotify-launcher starship stow unrar ark vivaldi vivaldi-ffmpeg-codecs xclip zsh libheif libpulse libraw libultrahdr libwmf lxappearance micro ntfs-3g power-profiles-daemon xorg-xinput xorg-xrandr
+sudo pacman -Syu blueman bluez brightnessctl dunst fastfetch feh ffmpegthumbnailer ffmpegthumbs kolourpaint ksnip network-manager-applet pavucontrol playerctl polybar rofi spotify-launcher starship stow unrar ark vivaldi vivaldi-ffmpeg-codecs xclip zsh libheif libpulse libraw libultrahdr libwmf lxappearance micro ntfs-3g power-profiles-daemon xorg-xinput xorg-xrandr yad jq xdotool
 
 yay -S ibus-bamboo input-remapper-git qimgv-git rofi-greenclip visual-studio-code-bin picom-git
 ```
