@@ -7,6 +7,7 @@ plugins=(
     git
     archlinux
     zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -32,6 +33,7 @@ alias ins="sudo pacman -S"
 alias upd="sudo pacman -Syu"
 alias remv="sudo pacman -Rsc"
 alias list="pacman -Qe"
+alias m="micro"
 
 alias conservationmode="~/MyScripts/cons_mode_control.sh" # Used for Lenovo laptops, feel free to remove if you don't need it
 
@@ -43,3 +45,6 @@ export XMODIFIERS=@im=ibus
 export QT4_IM_MODULE=ibus
 export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
+
+export JAVA_HOME=/usr/lib/jvm/jdk-22
+export PATH=$JAVA_HOME/bin:$PATH
