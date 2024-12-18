@@ -42,9 +42,6 @@ alias fkeys="sudo input-remapper-control --command start --device \"SONiX Gaming
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-export QT4_IM_MODULE=ibus
-export CLUTTER_IM_MODULE=ibus
-export GLFW_IM_MODULE=ibus
 
 export JAVA_HOME=/usr/lib/jvm/jdk-22
 export PATH=$JAVA_HOME/bin:$PATH
