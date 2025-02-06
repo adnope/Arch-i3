@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaper="/home/adnope/Pictures/Wallpapers & Icons/night.png"
+wallpaper="/home/adnope/Pictures/Wallpapers/night.png"
 
 # Set wallpaper using feh
 feh --bg-fill "$wallpaper"

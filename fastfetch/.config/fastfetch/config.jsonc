@@ -3,8 +3,8 @@
     "logo": {
         "type": "auto",
         "source": "~/.config/fastfetch/arch-circle-2.png",
-        "width": 32,
-        "height": 14,
+        "width": 30,
+        "height": 12,
         "padding": {
         	"left": 2,
         	"right": 2,

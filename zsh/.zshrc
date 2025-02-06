@@ -7,15 +7,11 @@ plugins=(
     git
     archlinux
     zsh-syntax-highlighting
-    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -23,7 +19,7 @@ SAVEHIST=10000
 setopt appendhistory
 
 alias uzsh="source ~/.zshrc"
-alias zshconfig="kate ~/.zshrc"
+alias zshconfig="micro ~/.zshrc"
 
 alias ff="fastfetch"
 alias c="clear"
