@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaper="~/Pictures/Wallpapers/night.png"
+wallpaper="$HOME/Pictures/Wallpapers/night.png"
 
 # Set wallpaper using feh
 feh --bg-fill "$wallpaper"
