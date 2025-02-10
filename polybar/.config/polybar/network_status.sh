@@ -29,7 +29,7 @@ calculate_speed() {
 
     # echo $ICON "  ${RX_RATE}  ${TX_RATE}"
     # echo $ICON " ${RX_RATE}"
-    echo $ICON " ${RX_RATE}" # Without upload rate
+    echo $ICON "${RX_RATE}" # Without upload rate
 }
 
 # Get network status
@@ -41,12 +41,18 @@ WIFI_STATUS=$(echo "$NETWORK_STATUS" | grep -i 'wifi' | awk 'NR==1 {print $3}')
 ICON_COLOR="%{F#7aa2f7}"
 TEXT_COLOR="%{F#a9b1d6}"
 
-ETH_ICON="$ICON_COLOR"󰈀"$TEXT_COLOR"
-WIFI_ICON_1="$ICON_COLOR"󰤯"$TEXT_COLOR"
-WIFI_ICON_2="$ICON_COLOR"󰤟"$TEXT_COLOR"
-WIFI_ICON_3="$ICON_COLOR"󰤢"$TEXT_COLOR"
-WIFI_ICON_4="$ICON_COLOR"󰤥"$TEXT_COLOR"
-WIFI_ICON_5="$ICON_COLOR"󰤨"$TEXT_COLOR"
+ETH_ICON="$ICON_COLOR"ETH"$TEXT_COLOR"
+# 󰈀
+WIFI_ICON_1="$ICON_COLOR"WIFI"$TEXT_COLOR"
+# 󰤯
+WIFI_ICON_2="$ICON_COLOR"WIFI"$TEXT_COLOR"
+# 󰤟
+WIFI_ICON_3="$ICON_COLOR"WIFI"$TEXT_COLOR"
+# 󰤢
+WIFI_ICON_4="$ICON_COLOR"WIFI"$TEXT_COLOR"
+# 󰤥
+WIFI_ICON_5="$ICON_COLOR"WIFI"$TEXT_COLOR"
+# 󰤨
 
 # Determine interface and icon
 if [[ "$ETH_STATUS" == "connected" ]]; then
