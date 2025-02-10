@@ -35,9 +35,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
     According to Arch Wiki, this is how to get microsoft fonts from an existing Windows C Drive partition:
     ```
-    sudo mount --mkdir /window_partition /run/media/adnope/Windows
+    sudo mount --mkdir /window_partition /run/media/user_name/Windows
     sudo mkdir -p /usr/local/share/fonts/WindowsFonts
-    sudo cp /run/media/adnope/Windows/Windows/Fonts/*.ttf /usr/local/share/fonts/WindowsFonts/
+    sudo cp /run/media/user_name/Windows/Windows/Fonts/*.ttf /usr/local/share/fonts/WindowsFonts/
     sudo chmod 644 /usr/local/share/fonts/WindowsFonts/*
     fc-cache --force
     ```

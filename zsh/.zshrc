@@ -39,5 +39,8 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
-export JAVA_HOME=/usr/lib/jvm/jdk-22
+export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+
+export ANDROID_HOME=$HOME/dev/android/android-sdk
+export PATH=$PATH:$HOME/dev/android/android-sdk/cmdline-tools/latest/bin
