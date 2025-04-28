@@ -5,6 +5,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="af-magic"
 PYTHON_VENV_NAME=".venv"
 PYTHON_VENV_NAMES=($PYTHON_VENV_NAME venv)
+BROWSER="brave"
+EDITOR="kate"
 
 plugins=(
     aliases
@@ -13,7 +15,6 @@ plugins=(
     git
     archlinux
     zsh-syntax-highlighting
-    zsh-autocomplete
     zsh-autosuggestions
 )
 
