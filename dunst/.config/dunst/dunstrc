@@ -4,16 +4,17 @@ separator_color= frame
 scale = 1.5
 font = JetBrainsMono Nerd Font 12
 corner_radius = 10
+origin = top-right
 
 [urgency_low]
 background = "#303446"
 foreground = "#c6d0f5"
-timeout = 2
+timeout = 4
 
 [urgency_normal]
 background = "#303446"
 foreground = "#c6d0f5"
-timeout = 2
+timeout = 4
 
 [urgency_critical]
 background = "#303446"
